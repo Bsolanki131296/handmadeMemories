@@ -25,12 +25,11 @@ export class HeaderComponent {
       }
     }
   }
+
   @HostListener('window:scroll', [])
   onScroll() {
-    // Mobile View
-    const offset = window.innerWidth < 992 ? 50 : 150;
-
     const scrollPosition = window.scrollY + window.innerHeight;
+
     const pageHeight = document.documentElement.scrollHeight;
 
     if (scrollPosition >= pageHeight - 10) {
@@ -41,7 +40,7 @@ export class HeaderComponent {
     const sections = document.querySelectorAll('section');
 
     sections.forEach((section: any) => {
-      const sectionTop = section.offsetTop - offset;
+      const sectionTop = section.offsetTop - 150;
       const sectionHeight = section.offsetHeight;
       const sectionId = section.getAttribute('id');
 
@@ -53,30 +52,4 @@ export class HeaderComponent {
       }
     });
   }
-  // @HostListener('window:scroll', [])
-  // onScroll() {
-  //   const scrollPosition = window.scrollY + window.innerHeight;
-
-  //   const pageHeight = document.documentElement.scrollHeight;
-
-  //   if (scrollPosition >= pageHeight - 10) {
-  //     this.activeMenu = 'contactus';
-  //     return;
-  //   }
-
-  //   const sections = document.querySelectorAll('section');
-
-  //   sections.forEach((section: any) => {
-  //     const sectionTop = section.offsetTop - 150;
-  //     const sectionHeight = section.offsetHeight;
-  //     const sectionId = section.getAttribute('id');
-
-  //     if (
-  //       window.scrollY >= sectionTop &&
-  //       window.scrollY < sectionTop + sectionHeight
-  //     ) {
-  //       this.activeMenu = sectionId;
-  //     }
-  //   });
-  // }
 }

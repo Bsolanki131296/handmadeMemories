@@ -32,6 +32,9 @@
   .logo_img {
     width: 8rem !important;
   }
+  .stretch {
+    height: stretch;
+  }
 }
 .logo_img {
   width: 8rem;
@@ -43,3 +46,8 @@
 //     position: relative; /* or static */
 //   }
 // }
+html,
+body {
+  overflow-x: hidden;
+  height: 100%; /* ❌ This stops window.scrollY from tracking on mobile! */
+}
