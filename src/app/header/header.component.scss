@@ -1,0 +1,32 @@
+.nav-link {
+  color: beige;
+  transition: 0.3s;
+}
+
+.nav-link.active {
+  color: gold !important;
+  font-weight: bold;
+  border-bottom: 2px solid gold;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 10%;
+  background: white;
+}
+@media only screen and (max-width: 768px) {
+  .nav-link {
+    color: gold;
+    transition: 0.3s;
+    background-color: brown;
+  }
+
+  .nav-link.active {
+    color: brown !important;
+    font-weight: bold;
+    border-bottom: 2px solid gold;
+    background-color: beige;
+  }
+}
